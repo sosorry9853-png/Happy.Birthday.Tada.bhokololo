@@ -1,0 +1,208 @@
+<!DOCTYPE html>    
+<html lang="en">    
+<head>    
+<meta charset="UTF-8">    
+<meta name="viewport" content="width=device-width, initial-scale=1.0">    
+<title>Cinematic Birthday</title>    
+<style>    
+  * { margin:0; padding:0; box-sizing:border-box; }    
+  body {    
+    font-family: 'Segoe UI', sans-serif;    
+    overflow-x: hidden;    
+    background: #0d0d1a;    
+    color: #fff;    
+  }    
+  section {
+    min-height: 100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+    transition: background 1s ease;
+    padding: 50px 20px;
+  }
+
+  .overlay, .lights, .particles { position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; }
+  .overlay { background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 80%); animation: shimmer 8s linear infinite; }
+  @keyframes shimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+
+  .lights { width:200%; height:200%; top:-50%; left:-50%; background: radial-gradient(circle at center, rgba(255,255,255,0.03), transparent); animation: rotateLights 30s linear infinite; }
+  @keyframes rotateLights { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+  .particle { position:absolute; background:rgba(255,255,255,0.4); border-radius:50%; opacity:0.2; pointer-events:none; box-shadow:0 0 10px rgba(255,255,255,0.6); }
+  .confetti { position:absolute; width:10px; height:10px; background:var(--color,#ff0); opacity:0.8; pointer-events:none; transform: rotate(0deg); animation: fall linear infinite; }
+  @keyframes fall { 0% { transform: translateY(-10px) rotate(0deg); } 100% { transform: translateY(100vh) rotate(360deg); } }
+
+  .birthday-img { position:absolute; width:120px; max-width:12%; opacity:0; transform: translateY(50px); transition: all 1.2s ease; }
+  .birthday-img.visible { opacity:1; transform: translateY(0); }
+
+  /* Sliding & Fade Text Animations */
+  .slide-left, .slide-right, .slide-up, .slide-down, .fade-up { opacity:0; transition: all 1s ease; }
+  .slide-left { transform: translateX(-100px); }
+  .slide-right { transform: translateX(100px); }
+  .slide-up { transform: translateY(50px); }
+  .slide-down { transform: translateY(-50px); }
+  .fade-up { transform: translateY(30px); opacity:0; transition: all 1s ease; }
+  .visible { opacity:1; transform: translateX(0) translateY(0); }
+
+  h1 { font-size:4em; margin-bottom:20px; color:#ff6f91; text-shadow: 2px 2px 15px rgba(255,111,145,0.7); }
+  h2 { font-size:3em; margin-bottom:15px; color:#f5a623; text-shadow: 2px 2px 15px rgba(245,166,35,0.7); }
+  p { font-size:1.8em; margin:15px 0; max-width:90%; color:#fff; text-shadow: 1px 1px 12px rgba(0,0,0,0.5); line-height:1.6em; }
+</style>
+
+</head>    
+<body>    
+
+<!-- Birthday Name Section -->    
+<section style="background: linear-gradient(135deg, #0a0a23, #2c0342);">    
+  <div class="overlay"></div>    
+  <div class="lights"></div>    
+  <div class="particles"></div>    
+  <div class="confetti-container"></div>      
+
+  <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" class="birthday-img" style="top:20%; left:10%;">    
+  <img src="https://cdn-icons-png.flaticon.com/512/2910/2910769.png" class="birthday-img" style="top:50%; left:70%;">      
+
+  <h2 class="slide-down">Tada Bhokololo</h2>    
+  <h1 class="slide-left">Happy Birthday!</h1>    
+  <p class="slide-right">May your day shine bright like a star</p>    
+</section>    
+
+<!-- Poem Section -->    
+<section style="background: linear-gradient(135deg, #120a3c, #3b0066);">    
+  <div class="overlay"></div>    
+  <div class="lights"></div>    
+  <div class="particles"></div>    
+  <div class="confetti-container"></div>      
+
+  <p class="fade-up">Happy Birthday, my sister Tada, 🎂 Life feels warmer whenever you’re near.</p>    
+  <p class="fade-up">Not just my sister, but my closest friend,</p>    
+  <p class="fade-up">Even when your predictions fail in the end! 🤣</p>    
+  <p class="fade-up">Through ups and downs, you never let me fall,</p>    
+  <p class="fade-up">Forever my sister, my friend through it all. 🌸✨</p>    
+  <p class="fade-up">We first met back in class eleven,</p>    
+  <p class="fade-up">A bond so rare, forever woven.</p>    
+  <p class="fade-up">You tied a rakhi, I still wonder why,</p>    
+  <p class="fade-up">Now I know—it was a blessing from the sky. 💫</p>    
+  <p class="fade-up">The best surprise gift the universe could send,</p>    
+  <p class="fade-up">A sister, a guide, and a lifelong friend.</p>    
+  <p class="fade-up">The universe may turn against me one day,</p>    
+  <p class="fade-up">But I know by my side, you’ll always stay. 🌸</p>    
+</section>    
+
+<!-- Birthday Quotes Section -->    
+<section style="background: linear-gradient(135deg, #1b0a3f, #40006e);">    
+  <div class="overlay"></div>    
+  <div class="lights"></div>    
+  <div class="particles"></div>    
+  <div class="confetti-container"></div>      
+
+  <img src="https://cdn-icons-png.flaticon.com/512/2910/2910769.png" class="birthday-img" style="top:25%; left:15%;">    
+  <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" class="birthday-img" style="top:50%; left:60%;">    
+  <img src="https://cdn-icons-png.flaticon.com/512/2331/2331925.png" class="birthday-img" style="top:70%; left:35%;">      
+
+  <p class="fade-up">🎉 Wishing you endless happiness and laughter!</p>    
+  <p class="fade-up">🎁 May every gift you open bring a smile to your heart.</p>    
+  <p class="fade-up">✨ May your year ahead be as magical as you are.</p>    
+  <p class="fade-up">🌸 Cheers to more memories, laughter, and fun together!</p>    
+</section>    
+
+<!-- Final Birthday Section -->    
+<section style="background: linear-gradient(135deg, #0a0a23, #1b0645);">    
+  <div class="overlay"></div>    
+  <div class="lights"></div>    
+  <div class="particles"></div>    
+  <div class="confetti-container"></div>      
+
+  <img src="https://cdn-icons-png.flaticon.com/512/2331/2331925.png" class="birthday-img" style="top:25%; left:50%;">    
+  <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" class="birthday-img" style="top:60%; left:20%;">    
+  <img src="https://cdn-icons-png.flaticon.com/512/2910/2910769.png" class="birthday-img" style="top:45%; left:70%;">      
+
+  <p class="fade-up">🎂 Celebrate, laugh, and cherish every moment!</p>    
+  <p class="fade-up">🫂A sister like you is a blessing words can’t hold.</p>    
+  <p class="fade-up">🌟 Shine bright and enjoy your special day, Tada!</p>    
+</section>    
+
+<!-- Memories Section (New) -->    
+<section style="background: linear-gradient(135deg, #0a0a23, #2c0342); padding:80px 20px;">
+  <div class="overlay"></div>
+  <div class="lights"></div>
+  <div class="particles"></div>
+  <div class="confetti-container"></div>
+  
+  <h2 class="fade-up" style="color:#ffdd59; text-shadow:2px 2px 12px rgba(255,221,89,0.8);">
+    ଏଠି click କରିକି ଦେଖ୍।
+  </h2>
+  
+  <p class="fade-up" style="margin-top:20px; font-size:1.5em;">
+    👉 <a href="https://photos.app.goo.gl/6BUVEL7CHz6pb4nX7" target="_blank" style="color:#6bc1ff; text-decoration:none; font-weight:bold;">
+      hii
+    </a>👈
+  </p>
+</section>    
+
+<script>    
+  const slideElems = document.querySelectorAll('.slide-left, .slide-right, .slide-up, .slide-down, .fade-up, .birthday-img');    
+  slideElems.forEach(el => {    
+    const observer = new IntersectionObserver(entries => {    
+      entries.forEach(entry => {    
+        if(entry.isIntersecting){    
+          entry.target.classList.add('visible');    
+        }    
+      });    
+    }, { threshold: 0.3 });    
+    observer.observe(el);    
+  });    
+    
+  document.addEventListener('mousemove', e => {    
+    const lights = document.querySelectorAll('.lights');    
+    lights.forEach(light => {    
+      light.style.transform = `rotate(${e.clientX/15}deg)`;    
+    });    
+  });    
+    
+  const particleCount = 50;    
+  document.querySelectorAll('.particles').forEach(container => {    
+    for(let i=0;i<particleCount;i++){    
+      const particle = document.createElement('div');    
+      particle.className = 'particle';    
+      const size = Math.random()*6 + 2;    
+      particle.style.width = size + 'px';    
+      particle.style.height = size + 'px';    
+      particle.style.top = Math.random()*100 + '%';    
+      particle.style.left = Math.random()*100 + '%';    
+      particle.style.animation = `float ${Math.random()*10 + 5}s linear infinite`;    
+      container.appendChild(particle);    
+    }    
+  });    
+    
+  const style = document.createElement('style');    
+  style.innerHTML = `    
+  @keyframes float {    
+    0% { transform: translateY(0) translateX(0); opacity:0.2; }    
+    50% { transform: translateY(-20px) translateX(10px); opacity:0.4; }    
+    100% { transform: translateY(0) translateX(0); opacity:0.2; }    
+  }`;    
+  document.head.appendChild(style);    
+    
+  document.querySelectorAll('.confetti-container').forEach(container => {    
+    const colors = ['#ff6f91','#ffdd59','#6bc1ff','#ffb347','#7efff5'];    
+    for(let i=0;i<30;i++){    
+      const confetti = document.createElement('div');    
+      confetti.className = 'confetti';    
+      confetti.style.setProperty('--color', colors[Math.floor(Math.random()*colors.length)]);    
+      confetti.style.left = Math.random()*100 + 'vw';    
+      confetti.style.width = (Math.random()*10 + 5) + 'px';    
+      confetti.style.height = confetti.style.width;    
+      confetti.style.animationDuration = (Math.random()*5 + 5) + 's';    
+      confetti.style.animationDelay = Math.random()*5 + 's';    
+      container.appendChild(confetti);    
+    }    
+  });    
+</script>    
+
+</body>    
+</html>
